@@ -1,0 +1,62 @@
+@keyframes uil-default-anim {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@function fixpx($px) {
+    @return ($px/31.25) + rem;
+}
+
+.overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.block {
+    left: 50% !important;
+    top: 50% !important;
+    margin-left: fixpx(-90);
+    margin-top: fixpx(-80);
+}
+
+.uildefaultcss {
+    position: relative;
+    background: none;
+    width: fixpx(200);
+    height: fixpx(200);
+}
+
+.uildefaultcss > div {
+    animation-name: uil-default-anim;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.uildefaultcss {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: none;
+    width: fixpx(180);
+    height: fixpx(110);
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.uildefaultcss .element {
+    top: fixpx(50);
+    left: fixpx(90);
+    width: fixpx(6);
+    height: fixpx(15);
+    background: #aaa;
+    border-radius: fixpx(10);
+    position: absolute;
+    transform-origin: center bottom;
+}
