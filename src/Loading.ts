@@ -27,9 +27,11 @@ export interface Parameters {
         overlay?: CSS.Properties;
         content?: CSS.Properties;
         vertices?: {
-            elements?: string[],
+            elements?: string[];
+            size?: string;
         } & CSS.Properties;
     };
+    
     /**
      * 基准文字大小
      * @type {number}
