@@ -25,6 +25,7 @@ export interface Parameters {
         content?: CSS.Properties;
         vertices?: {
             elements?: string[];
+            size?: string;
         } & CSS.Properties;
     };
     /**
