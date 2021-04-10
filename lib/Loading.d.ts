@@ -39,7 +39,7 @@ export interface Parameters {
      * @type {string}
      * @memberof Parameters
      */
-    cycleTime?: string;
+    cycleTime?: number;
     /**
      * 父级Id
      * @type {string}
