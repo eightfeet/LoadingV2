@@ -42,7 +42,7 @@ export interface Parameters {
      * @type {string}
      * @memberof Parameters
      */
-    cycleTime?: string;
+    cycleTime?: number;
     /**
      * 父级Id
      * @type {string}
@@ -74,7 +74,7 @@ class Loading {
 		this.counter = 0;
 		this.parentId = parentId;
 		this.length = length;
-		this.cycleTime = parseInt(cycleTime, 10) || 0.5;
+		this.cycleTime = cycleTime || 0.5;
 		this.emBase = emBase;
 		this.zIndex = parseInt(zIndex, 10) || 10000;
 	}
