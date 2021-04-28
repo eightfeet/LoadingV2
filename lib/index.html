@@ -1,0 +1,102 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"><meta http-equiv="X-UA-Compatible" content="ie=edge"><title>Loading</title><style>.center {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .parent {
+            float: left;
+            width: 100px; height: 100px; position: relative;
+            font-size: 1em;
+        }
+
+        .parentbox {
+            width: 300px;
+            margin: 0 auto 20px auto;
+        }
+        
+        #exampleshow {
+            line-height: 40px; background-color: rgb(20, 159, 64); width:260px; margin: 30px auto 10px auto; color: #fff; border-radius: 0.2em;
+            text-align: center;
+        }
+
+        #examplehide {
+            line-height: 40px; background-color: rgb(159, 115, 115); width:260px; margin: 20px auto 0 auto; color: #fff; border-radius: 0.2em;
+            text-align: center;
+        }
+
+        input {
+            border: 1px solid #aaa;
+            padding: 3px;
+        }
+
+        .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+        .clearfix{*+height:1%;}</style></head><body><div class="center">show&nbsp;<span id="counter">0</span>&nbsp;times</div><div class="parentbox clearfix"><div id="parentId1" class="parent"></div><div id="parentId2" class="parent"></div><div id="parentId3" class="parent"></div></div><div id="exampleshow">click me show Loading</div><div id="examplehide">click me hide Loading</div><br><br><script type="text/javascript" src="index.js"></script></body><script>var newLoading1 = new ___Loading___({
+        size: 50, // loading大小 默认20
+        length: 50, // 由几个vertices组成默认12个
+        cycleTime: 1,
+        emBase: 14,
+        parentId: 'parentId1',
+        style: { // 定义样式 {overlay: 覆盖层, content: 内容区, vertices: 组成节点}
+            overlay: {
+                backgroundColor: 'rgba(0,0,0,0)'
+            },
+            content: {
+                backgroundColor: 'rgba(0,0,0,0)',
+            },
+            vertices: {
+                width: '5px',
+                height: '5px',
+                borderRadius: '10px',
+                size: '25px',
+                backgroundColor: "green",
+                'animation-duration': "asdd",
+                elements: ['red','orange','blue','black', 'chocolate', 'mediumblue']
+            },
+        }
+    });
+
+    var newLoading2 = new ___Loading___({
+        length: 50, // 由几个vertices组成默认12个
+        cycleTime: 1,
+        emBase: 14,
+        parentId: 'parentId2',
+        style: { // 定义样式 {overlay: 覆盖层, content: 内容区, vertices: 组成节点}
+            vertices: {
+                width: '0.3em',
+                height: '0.3em',
+                size: '2em',
+                backgroundColor: "rgba(255, 255, 255, 0.8)"
+            },
+        }
+    });
+
+    var newLoading3 = new ___Loading___({
+        parentId: 'parentId3',
+        emBase: 14,
+        style: { // 定义样式 {overlay: 覆盖层, content: 内容区, vertices: 组成节点}
+            content: {
+                backgroundColor: 'rgba(0,0,0,0)',
+            },
+            vertices: {
+                width: '2px',
+            },
+        }
+    });
+
+    var btnshow = document.getElementById('exampleshow');
+    var btnhide = document.getElementById('examplehide');
+    var counter = document.getElementById('counter');
+
+    btnshow.onclick = function(){
+        newLoading1.show();
+        newLoading2.show();
+        newLoading3.show();
+        counter.innerHTML = newLoading1.counter;
+    }
+
+    btnhide.onclick = function(){
+        newLoading1.hide();
+        newLoading2.hide();
+        newLoading3.hide();
+        counter.innerHTML = newLoading1.counter;
+    };</script></html>
