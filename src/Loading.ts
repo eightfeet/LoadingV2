@@ -27,8 +27,13 @@ export interface Parameters {
         overlay?: CSS.Properties;
         content?: CSS.Properties;
         vertices?: {
+<<<<<<< HEAD
             elements?: string[];
             size?: string;
+=======
+            elements?: string[],
+            size?: string,
+>>>>>>> 8b97a2fc94ff3573edd53914dcc53356382ef6dd
         } & CSS.Properties;
     };
     
@@ -43,7 +48,7 @@ export interface Parameters {
      * @type {string}
      * @memberof Parameters
      */
-    cycleTime?: string;
+    cycleTime?: number;
     /**
      * 父级Id
      * @type {string}
@@ -75,7 +80,7 @@ class Loading {
 		this.counter = 0;
 		this.parentId = parentId;
 		this.length = length;
-		this.cycleTime = parseInt(cycleTime, 10) || 0.5;
+		this.cycleTime = cycleTime || 0.5;
 		this.emBase = emBase;
 		this.zIndex = parseInt(zIndex, 10) || 10000;
 	}
