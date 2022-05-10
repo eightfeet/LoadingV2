@@ -6,7 +6,7 @@
     "build": "rm -rf ./lib && webpack --mode=production",
     "build:uat": "rm -rf ./lib && webpack --mode=production --isuat=true",
     "dev": "webpack-dev-server --mode=development",
-    "report": "rm -rf ./lib && webpack --mode=production --report=true",
+    "report": "rm -rf ./lib && webpack --mode=production --report=true"
   },
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
