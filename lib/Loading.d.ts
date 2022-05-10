@@ -1,4 +1,12 @@
 import * as CSS from 'csstype';
+export interface Style {
+    overlay?: CSS.Properties;
+    content?: CSS.Properties;
+    vertices?: {
+        elements?: string[];
+        size?: string;
+    } & CSS.Properties;
+}
 export interface Parameters {
     /**
      * loadingId 不传自动生成 loading + 时间戳 + 100以内的随机数
@@ -11,7 +19,7 @@ export interface Parameters {
      * @type {number}
      * @memberof Parameters
      */
-    zIndex?: string;
+    zIndex?: string | number;
     /**
      * loading样式
      * @type {{
@@ -20,14 +28,7 @@ export interface Parameters {
      *     }}
      * @memberof Parameters
      */
-    style?: {
-        overlay?: CSS.Properties;
-        content?: CSS.Properties;
-        vertices?: {
-            elements?: string[];
-            size?: string;
-        } & CSS.Properties;
-    };
+    style?: Style;
     /**
      * 基准文字大小
      * @type {number}
